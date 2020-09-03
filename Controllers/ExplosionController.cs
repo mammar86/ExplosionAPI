@@ -11,9 +11,24 @@ namespace ExplosionAPI.Controllers
     [ApiController]
     public class ExplosionController : ControllerBase
     {
+        [HttpGet]
+        public string Explode(string s)
+        {
+            var exp = "";
 
+            for (var i = 0; i < s.Length; i++)
+            {
 
+                var numChar = s[i].ToString();
+                var num = Int32.Parse(numChar);
 
+                for (var j = 0; j < num; j++)
+                {
+                    exp += numChar;
+                }
+            }
+            return exp;
+        }
 
     }
 }
